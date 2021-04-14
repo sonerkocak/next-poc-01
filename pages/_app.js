@@ -1,6 +1,6 @@
 import Router from "next/router";
 import ReactDOM from "react-dom";
-import '../styles/globals.css';
+import 'styles/globals.css';
 import {delay} from '../common-util';
 import Link from 'next/link';
 
