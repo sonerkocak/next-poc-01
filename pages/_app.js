@@ -2,6 +2,7 @@ import Router from "next/router";
 import ReactDOM from "react-dom";
 import '../styles/globals.css';
 import {delay} from '../common-util';
+import Link from 'next/link';
 
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
@@ -21,10 +22,20 @@ Router.events.on("routeChangeError", () => {
 });
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+      <>
+        <h1>MENU</h1>
+        <Link href="/test"><a>Test</a></Link>
+        <Link href="/test2"><a>Test 2</a></Link>
+        <Link href="/test3"><a>Test 3</a></Link>
+        <br/>
+        <Component {...pageProps} />
+      </>
+  );
 }
 
 MyApp.getInitialProps = async (ctx) => {
+    console.log('MyApp.getInitialProps', ctx.pathname);
   //await delay(3000);
   return {
     props: {},

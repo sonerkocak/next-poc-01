@@ -13,3 +13,8 @@ export default function Test3() {
       </>
     );
 }
+
+export async function getServerSideProps(context) {
+    console.log('Test3.getServerSideProps', context.resolvedUrl);
+    return { props: {} };
+}
