@@ -1,10 +1,11 @@
 import {useEffect} from 'react';
-import Router from "next/router";
+import {useRouter} from "next/router";
 
 export default function Test3() {
+    const router = useRouter();
 
     useEffect(() => {
-        Router.push("/test");
+        router.push("/test");
     }, []);
 
     return (
