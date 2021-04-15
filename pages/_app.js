@@ -34,8 +34,9 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-MyApp.getInitialProps = async (ctx) => {
-    console.log('MyApp.getInitialProps', ctx.pathname);
+MyApp.getInitialProps = async (context) => {
+    console.log('MyApp.getInitialProps', context.ctx.pathname);
+    console.log('MyApp.getInitialProps', context.ctx.query);
   //await delay(3000);
   return {
     props: {},
